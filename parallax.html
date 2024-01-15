@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="parallax.css" />
+    <script src="parallax.js"></script>
+    <title>Parallax</title>
+  </head>
+
+  <body>
+    <div class="onTop"><i class="fa-solid fa-arrow-up"></i></div>
+    <div class="background">
+      <nav>
+        <p>Sign In</p>
+        <i class="firstSkew"></i>
+        <p>Log Out</p>
+        <i class="secondSkew"></i>
+      </nav>
+      <div class="dateTime">
+        <div id="hours">
+          <p id="hoursDisplay"></p>
+          <p id="hoursText">Hours</p>
+        </div>
+        <div id="mins">
+          <p id="minsDisplay"></p>
+          <p id="minsText">Mins</p>
+        </div>
+        <div id="secs">
+          <p id="secsDisplay"></p>
+          <p id="secsText">Secs</p>
+        </div>
+      </div>
+      <div class="sideBarArrow"></div>
+      <div class="sideBarMenu">
+        <ul class="sideBarUl">
+          <li>
+            <i class="fa-solid fa-magnifying-glass"></i
+            ><input class="search" type="text" placeholder="Search" />
+          </li>
+          <li>
+            <i class="fa-solid fa-house-chimney"></i>
+            <p>Dashboard</p>
+          </li>
+          <li>
+            <i class="fa-solid fa-database"></i>
+            <p>Revenue</p>
+          </li>
+          <li>
+            <i class="fa-regular fa-bell"></i>
+            <p>Notifications</p>
+          </li>
+          <li>
+            <i class="fa-solid fa-chart-pie"></i>
+            <p>Analytics</p>
+          </li>
+          <li>
+            <i class="fa-regular fa-heart"></i>
+            <p>Likes</p>
+          </li>
+          <li>
+            <i class="fa-solid fa-wallet"></i>
+            <p>Wallet</p>
+          </li>
+          <li>
+            <i class="fa-solid fa-arrow-right-from-bracket"></i>
+            <p>Logout</p>
+          </li>
+          <li>
+            <i class="fa-regular fa-moon"></i>
+            <p>Light Mode</p>
+            <div class="outsideBorderToggle">
+              <div class="insideBorderToggle"></div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <p class="parallaxText">PARALLAX</p>
+    </div>
+    <div>
+      <div>
+        <img id="totoro" src="parallax-img/parallax/png-image.png" />
+        <div class="popupTotoro">
+          <p class="totoroSaid">I'm Totoro Welcome</p>
+        </div>
+      </div>
+      <img id="shootingstar" src="parallax-img/parallax/shootingstar.png" />
+    </div>
+
+
+                                                  <!-- taskTodoList -->
+    <div class="todoList"> 
+      <h1>TODO-LIST</h1>
+        <div class="todoHeadInput">
+              <input id="todoInput" type="text" placeholder="Input Here...">
+              <i class="fa-solid fa-plus plus"></i>
+        </div>
+        <div class="todoListBody">
+         <ul class="taskList"></ul>
+        </div>
+   </div>
+
+                                                  <!--CACULATOR-->
+        <div class="caculator">
+            <div class="caculatorHeadForm"></div>
+
+            <div class="caculatorBody">
+
+              <div class="caculatorNumber">
+                <button class="btn" value="7">7</button>
+                <button class="btn" value="8">8</button>
+                <button class="btn" value="9">9</button>
+                <button class="btn" value="4">4</button>
+                <button class="btn" value="5">5</button>
+                <button class="btn" value="6">6</button>
+                <button class="btn" value="1">1</button>
+                <button class="btn" value="2">2</button>
+                <button class="btn" value="3">3</button>
+                <button class="btn" value="0">0</button>
+              </div>
+
+            <div class="caculatorOperation">
+              <button id="clean" class="btn">AC</button>
+              <button id="del" class="btn">DEL</button>
+              <button id="equal" class="btn">=</button>
+              <button class="btn" value="/">/</button>
+              <button class="btn" value="+">+</button>
+              <button class="btn" value="-">-</button>
+              <button class="btn" value="*">x</button>
+            </div>
+
+          </div>
+        </div>
+  </body>
+</html>

@@ -1,0 +1,688 @@
+*{
+    margin:0;padding:0;box-sizing: border-box;font-family: "Poppins",sans-serif;scroll-behavior: smooth;
+}
+:root{
+    --bgclr:rgb(2, 17, 43);
+}
+
+body{
+    overflow-x: hidden;
+}
+
+ .background{ 
+    min-height: 100vh;
+    background-image:url(parallax-img/parallax/paralax-background.jpg);
+    background-size: 1600px;
+    background-position: 50% 100%;
+    z-index: -10;
+    } 
+
+.onTop{
+    position: fixed;
+    top:550px;
+    right:50px;
+    width: 50px;
+    height: 50px;
+    background-color: rgb(27, 26, 26);
+    font-size: 40px;
+    border-radius: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .4s ease;
+}
+.onTop i{
+    color:white;
+}
+.onTop:hover{
+    transform: translateY(-10px);
+    transition: .4s ease;
+    cursor: pointer;
+}
+
+.dateTime{
+    position: absolute;
+    left:350px;
+    display: flex;
+    z-index: 3;
+    margin-top:20px;
+}
+
+.dateTime div {
+    background-color:rgb(6, 6, 42);
+    width: 55px;
+    height:55px;
+    position: relative;
+    top:0px;
+    left:200px;
+    margin-left:10px;
+    color:white;
+    border-radius: 10px;
+}
+
+.dateTime #hoursDisplay{
+    font-size: 25px;
+    margin-left:12px;
+    padding-top:5px;
+}
+.dateTime #hoursText{
+    margin-left:8px;
+    font-size: 15px;
+}
+.dateTime #minsDisplay{
+    font-size: 25px;
+    padding-top:5px;
+    margin-left:12px;
+}
+.dateTime #minsText{
+    margin-left:12px;
+    font-size: 15px;
+}
+.dateTime #secsDisplay{
+    font-size: 25px;
+    margin-left:13px;
+    padding-top:5px;
+}
+.dateTime #secsText{
+    margin-left:11px;
+    font-size: 15px;
+}
+
+
+
+nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left:940px;
+    border-radius: 15px;
+    padding:16px 20px;
+    /* background-color:var(--bgclr); */
+}
+nav p{
+    margin-left:30px;
+}
+nav p:nth-child(1){
+    color:black;
+    /* background:rgb(181, 174, 174); */
+    background-color: white;
+    padding:10px 20px;
+    /* border-radius: 20px; */
+    border:4px solid var(--bgclr);
+    /* box-shadow: 0 0 35px blue; */
+}
+nav p:nth-child(3){
+    color:black;
+    /* background:rgb(181, 174, 174); */
+    background-color: white;
+    padding:10px 20px;
+    /* border-radius: 20px; */
+    border:4px solid var(--bgclr);
+    /* box-shadow: 0 0 35px blue; */
+}
+
+
+
+nav .firstSkew{
+    position: absolute;
+    background-color:white;
+    width: 10px;
+    height: 4px;
+    top:16px;
+    left:70px;
+    transform: skewX(-45deg);
+    transition: .5s ease;
+}
+
+nav .secondSkew{
+    position: absolute;
+    background-color:white;
+    width: 10px;
+    height: 4px;
+    top:16px;
+    left:200px;
+    transform: skewX(-45deg);
+    transition: .5s ease;
+}
+nav .secondSkew::after{
+    content:"";
+    position: absolute;
+    background-color:white;
+    width: 10px;
+    height: 4px;
+    top:42px;
+    left:94px;
+    transform: skewX(0deg);
+    transition: .5s ease;
+}
+
+nav .firstSkew::after{
+    content:"";
+    position: absolute;
+    background-color:white;
+    width: 10px;
+    height: 4px;
+    top:42px;
+    left:90px;
+    transform: skewX(0deg);
+    transition: .5s ease;
+}
+nav p:hover{
+    box-shadow: 0 0 35px blue;
+    transition: .5s ease;
+    cursor: pointer;
+}
+
+nav p:nth-child(1):hover ~.firstSkew{
+    left:105px;
+    transition: .5s ease;
+  
+}
+nav p:nth-child(3):hover ~.secondSkew{
+    left:230px;
+    transition: .5s ease;
+  
+}
+
+nav p:nth-child(1):hover ~.firstSkew::after{
+    left:10px;
+}
+nav p:nth-child(3):hover ~.secondSkew::after{
+    left:10px;
+}
+
+
+.background .parallaxText{
+    position: absolute;
+    top:500px;
+    left:450px;
+    font-size: 70px;
+    transition: .5s;
+    color:white;
+    
+}
+@keyframes totoroJumping {
+    0%{
+        transform: translateY(0px);
+    }
+    /* 49%{
+        transform: translateY(-10px);
+    } */
+    50%{
+        transform: translateY(-15px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
+}
+#totoro{
+    position: absolute;
+    top:460px;
+    left:350px;
+    width: 100px;
+    height: 120px;
+    transition: .5s;
+    animation-name: totoroJumping;
+    animation-timing-function: ease-in-out;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+   
+}
+#totoro:hover{
+    width: 140px;
+    height: 170px;
+    transition: 1s;
+}
+
+.popupTotoro{
+    width: 130px;
+    height: 70px;
+    background-color: white;
+    position: absolute;
+    top:350px;
+    left:400px;
+    border-radius: 20px;
+    opacity: 0;
+    scale:0;
+    transition: .5s;
+}
+
+.popupTotoro::before{
+    content: "";
+    width: 30px;
+    height: 10px;
+    /* background-color: purple; */
+    border-left:10px solid #00000000;
+    border-right:10px solid #ff000000;
+    border-top: 10px solid white;
+    transform:rotateZ(45deg);
+    position: relative;
+    top:80px;
+    left:30px;
+    opacity: 0;
+    scale:0;
+    transition: .5s;
+}
+.popupTotoro .totoroSaid{
+    scale:1;
+    text-align: center;
+    font-size: 14px;
+    width: 120px;
+    margin-left:5px;
+    transition: 1s;
+}
+
+#totoro:hover ~.popupTotoro{
+    opacity: 1;
+    transition: 1s;
+    scale:1;
+}
+#totoro:hover ~ .popupTotoro::before{
+    opacity: 1;
+    transition: 1s;
+    scale:1;
+}
+
+@keyframes shootingstar {
+    0%{
+        /* transform: translateX(0px); */
+        left:600px;
+        top:-125px;
+        opacity: 1;
+        transform: rotateZ(-5deg);
+    }
+
+    100%{
+        
+        /* transform: translateX(-300px); */
+        left:-600px;
+        top:200px;
+        opacity: 1;
+        transform: rotateZ(-20deg);
+    }
+}
+#shootingstar{
+    position: absolute;
+    top:0px;
+    left:0px;
+    opacity: 1;
+    transform:rotateZ(180px);
+    animation-name: shootingstar;
+    animation-timing-function: ease-in-out;
+    animation-duration: 8s;
+    animation-iteration-count:infinite; 
+    animation-delay: 1s; 
+}
+
+
+.background .sideBarMenu{
+    width: 70px;
+    height: 100vh;
+    background-color: var(--bgclr);
+    /* display: block; */
+    transition: .5s ease;
+}
+
+.background .sideBarMenu.active{
+    /* background-color: var(--bgclr);
+    width: 250px;
+    height: 100vh; */
+    background-color: var(--bgclr);
+    width: 250px;
+    height: 100vh;
+    /* display: block; */
+    transition: .5s ease;
+}
+.background .sideBarArrow{
+    content:"";
+    position: absolute;
+    background-color: white;
+    width: 25px;
+    height: 25px;
+    left:57px;
+    top:10px;
+    border-radius: 100px;
+    z-index: 4;
+    transition: .5s ease;
+}
+.background .sideBarArrow::before{
+    content: ">";
+    position: absolute;
+    color:var(--bgclr);
+    left:7px;
+    top:0px;
+    font-size: 22px;
+    /* color:red */
+    transition: .5s ease;
+} 
+
+.background .sideBarArrow.active{
+    content:"";
+    position: fixed;
+    background-color: white;
+    width: 25px;
+    height: 25px;
+    left:237px;
+    top:10px;
+    border-radius: 100px;
+    transition: .5s ease;
+}
+
+.sideBarUl > li {
+    font-size: 20px;
+    padding:20px 5px;
+    margin-left:20px;
+    list-style: none;
+    display: flex;
+    transition: .3s ease;
+    width: 150px;
+}
+.sideBarMenu .sideBarUl{
+    color:white;
+    position:absolute;
+    padding-top:0px;
+}
+.sideBarUl li:nth-child(1) input{
+    margin-left:5px;
+    width: 0px;
+    margin-top:-5px;
+    transition: .3s ease;
+    height: 30px;
+    outline:none;
+} 
+.sideBarUl li:nth-child(1) input.active{
+    outline:none;
+    border:none;
+    border-radius: 10px;
+    height: 30px;
+    padding-left:10px;
+    margin-left:10px;
+    margin-top:-5px;
+    display:block;
+    width: 170px;
+    transition: .3s ease;
+}
+
+.sideBarUl li:nth-child(1) {
+    top:10px;
+    position: relative;
+}
+
+
+.sideBarUl li p{
+    font-size: 14px;
+    margin-left:20px;
+    display: none;
+    transition: .5s ease;
+    opacity: 0;
+}
+.sideBarUl li p.active{
+    display: block;
+    color:white;
+    transition: .5s ease;
+    opacity: 1;
+}
+.sideBarMenu .sideBarUl li:nth-child(2):hover{
+    background-color:rgba(109, 108, 108, 0.635);
+    border-radius: 15px;
+    transition: .3s ease;
+    transform: translateX(30px);
+    width: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sideBarMenu .sideBarUl li:nth-child(3):hover{
+    background-color:rgba(109, 108, 108, 0.635);
+    border-radius: 15px;
+    transition: .3s ease;
+    transform: translateX(30px);
+    width: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sideBarMenu .sideBarUl li:nth-child(4):hover{
+    background-color:rgba(109, 108, 108, 0.635);
+    border-radius: 15px;
+    transition: .3s ease;
+    transform: translateX(30px);
+    width: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sideBarMenu .sideBarUl li:nth-child(5):hover{
+    background-color:rgba(109, 108, 108, 0.635);
+    border-radius: 15px;
+    transition: .3s ease;
+    transform: translateX(30px);
+    width: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sideBarMenu .sideBarUl li:nth-child(6):hover{
+    background-color:rgba(109, 108, 108, 0.635);
+    border-radius: 15px;
+    transition: .3s ease;
+    transform: translateX(30px);
+    width: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sideBarMenu .sideBarUl li:nth-child(7):hover{
+    background-color:rgba(109, 108, 108, 0.635);
+    border-radius: 15px;
+    transition: .3s ease;
+    transform: translateX(30px);
+    width: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sideBarMenu .sideBarUl li:nth-child(8):hover{
+    background-color:rgba(109, 108, 108, 0.635);
+    border-radius: 15px;
+    transition: .3s ease;
+    transform: translateX(30px);
+    width: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.sideBarMenu .sideBarUl li .outsideBorderToggle{
+    background:transparent;
+    width: 40px;
+    height: 25px;
+    position: absolute;
+    left:150px;
+    top:503px;
+    border:0.3px solid black;
+    border-radius:15px;
+    display: none;
+    transition: .5s ease;
+}
+.sideBarMenu .sideBarUl li .outsideBorderToggle.active{
+    display: block;
+    transition: 1s ease;
+}
+
+.sideBarMenu .sideBarUl li .outsideBorderToggle .insideBorderToggle{
+   background:white;
+   width: 23px;
+   height: 23px;
+   border-radius: 100px;
+   position: absolute;
+   left:0px;
+   transition: .3s ease;
+}
+.sideBarMenu .sideBarUl li .outsideBorderToggle .insideBorderToggle.active{
+    background:purple;
+    width: 23px;
+    height: 23px;
+    border-radius: 100px;
+    position: absolute;
+    left:15px;
+    transition: .3s ease;
+ }
+
+
+
+
+.todoList{
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(0,rgb(217, 233, 211),rgb(45, 45, 243));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.todoList h1{
+    position: absolute;
+    top:650px;
+    left:515px;
+    font-size: 40px;
+}
+.todoList #todoInput{
+    width: 500px;
+    height: 70px;
+    background-color:white;
+    margin-bottom: 350px;
+    border: 7px solid #6E9EEB;
+    outline:none;
+    padding:5px 10px;
+    padding-right: 50px;
+    font-size: 20px;
+    position: relative;
+}
+.todoList .todoHeadInput .plus{
+    position: absolute;
+    font-size: 25px;
+    left:822px;
+    top:730px;
+    z-index:3;
+    background-color:#6E9EEB;
+    padding:12px 12px;
+    color:white;
+    cursor: pointer;
+}
+.todoList .todoListBody{
+    /* background-color: red; */
+    width: 500px;
+    height: 400px;
+    position: absolute;
+    top:790px;
+    display: flex;
+}
+.todoList .todoListBody li{
+    background-color: gainsboro;
+    width: 445px;
+    list-style: none;
+    padding:15px 10px;
+}
+.todoList .taskList {
+    flex-direction: column;
+    margin-top:10px;
+}
+.todoList .taskList li{
+    background-color: white;
+    font-size: 20px;
+    width: 450px;
+    height: 40px;
+    padding:10px 15px;
+    text-align: left;
+    border-radius: 15px;
+    margin-left:30px;
+}
+
+.todoList .taskList button{
+    background-color:rgb(6, 6, 70);
+    width: 100px;
+    height: 40px;
+    outline:none;
+    margin-left:20px;
+    /* border:none; */
+    border-radius: 10px;
+    padding:10px 10px;
+    display:inline-block;
+    margin-left:200px;
+    margin-top:10px;
+    margin-bottom: 10px;
+    color:white;
+}
+
+
+                                                                    /* CACULATOR */
+.caculator{
+    width: 100%;
+    height: 100vh;
+    background-color:rgb(39, 30, 30);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.caculator .caculatorHeadForm{
+    width: 550px;
+    height:80px;
+    background-color: white;
+    margin-bottom: 400px;
+    position: relative;
+    padding:10px 10px; 
+    font-size: 26px;
+}
+.caculator .caculatorBody{
+    background-color: transparent;
+    width: 550px;
+    height: 300px;
+    position: absolute;
+    display: flex;
+}
+.caculator .caculatorBody .caculatorNumber{
+    display: grid;
+    grid-template-columns:repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    width: 280px; 
+    height: 280px;
+    gap: 2px;
+    padding-top:10px;
+  
+}
+.caculator .caculatorBody .caculatorNumber .btn{
+    font-size: 26px;
+    background:white;
+}
+.caculator .caculatorBody .caculatorOperation .btn{
+    font-size: 26px;
+    background:white;
+}
+
+.caculator .caculatorBody .caculatorOperation{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(4,1fr);
+    width: 280px; 
+    height: 280px;
+    gap: 2px;
+    margin-left:10px;
+    border-left:1px solid black;
+    padding-left:10px;
+    padding-top:10px;
+}
+
+.caculator .caculatorBody .btn:active{
+    background-color:rgb(228, 225, 225);
+}
+
+
+.loginForm{
+    width: 100%;
+    height: 100vh;
+    background-color: white;
+}
+
+
